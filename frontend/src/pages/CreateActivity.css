@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.create-task-body-act{
+    margin-left: 0rem;
+    background: beige;
+    width: 49rem
+}
+
+.form-act{
+    background-color: beige;
+    /* height: 20rem; */
+    padding: 8rem;
+
+}
+
+.submit-class{
+    margin: 2rem 9rem;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 8px;
+    background: #9deaff
+}
+
+.submit-class:hover{
+    cursor: pointer;
+}
+
