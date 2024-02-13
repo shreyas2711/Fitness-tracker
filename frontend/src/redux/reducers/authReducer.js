@@ -1,4 +1,4 @@
-const { USER_SIGNIN_SUCCESS, USER_SIGNIN_REQUEST, USER_SIGNIN_FAIL, USER_LOGOUT } = require("../constants/authConstants")
+const { USER_SIGNIN_SUCCESS, USER_SIGNIN_REQUEST, USER_SIGNIN_FAIL, USER_LOGOUT, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_SIGNUP_REQUEST } = require("../constants/authConstants")
 
 
 
@@ -40,6 +40,22 @@ exports.authReducer = (state=initialState,action)=>{
               return{
                 isAuthenticated:false,
 
+              };
+              case USER_SIGNUP_REQUEST:
+                return{
+                  ...state,
+                  loading:true,
+                  error:null
+                }
+
+            case USER_SIGNUP_SUCCESS:
+              
+              return{
+                error:null,
+              }
+            case USER_SIGNUP_FAIL:
+              return{
+                error:action.payload
               }
             default:
                 return state;

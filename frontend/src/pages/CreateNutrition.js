@@ -34,7 +34,7 @@ export default function CreateNutrition() {
 
   return (
     <>
-      {/* <NavbarComp/> */}
+      <NavbarComp/>
       <div className="create-task-body">
       
         <form className='form-nut'  onSubmit={handleSubmit}>

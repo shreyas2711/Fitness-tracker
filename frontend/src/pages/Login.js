@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react';
 import { userSignInAction } from '../redux/actions/authAction';
 import {useNavigate} from 'react-router-dom';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import './Login.css'
+import './Login.css';
+import { Link } from 'react-router-dom';
 // import { useEffect } from 'react';
 // import { useEffect } from 'react';
 
@@ -115,6 +116,7 @@ const handleFormSubmit = async(e)=>{
         />
         <div style={{ color: 'red' }}>{errors.password}</div>
           <button className='login-button' type="submit" onClick={handleFormSubmit}>Log In</button>
+          <Link to="/signup"><button className='signup-button' type="submit">Sign Up</button></Link>
           {/* <button type="submit">Log out</button> */}
           </div>
       </form>

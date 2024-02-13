@@ -1,11 +1,10 @@
 import './App.css';
-import Navbar from './components/NavbarComp';
 import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
-import ProtectedRoute from './components/ProtectedRoute';
 import CreateActivity from './pages/CreateActivity';
 import CreateNutrition from './pages/CreateNutrition';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
@@ -13,6 +12,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Login/>} />   
+      <Route path='/signup' element={<SignUp/>} />   
      {/* <ProtectedRoute path="/home" element={<Home/>}  /> */}
        
   

@@ -1,5 +1,5 @@
 import axios from "axios";  
-import { USER_LOGOUT, USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS } from "../constants/authConstants";
+import { USER_LOGOUT, USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNUP_REQUEST } from "../constants/authConstants";
 
 
 
@@ -45,6 +45,26 @@ export const userSignOutAction = ()=> async(dispatch)=>{
             payload:data,
         });
         
+    }
+    catch(error){
+        dispatch({
+            payload:error.response.data.error,
+        });
+    }
+}
+
+export const userSignUpAction = (user)=>async(dispatch)=>{
+
+    dispatch({type:USER_SIGNUP_REQUEST});
+
+    try{
+
+        const data = await axios.post('api/user/signup',user);
+        dispatch({
+            type:USER_SIGNIN_SUCCESS,
+            payload:data,
+            
+        })
     }
     catch(error){
         dispatch({

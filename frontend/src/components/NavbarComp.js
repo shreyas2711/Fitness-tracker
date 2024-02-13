@@ -156,7 +156,7 @@ function NavbarComp() {
               </Button>
             ))} */}
             {/* <Button>CreatePost</Button> */}
-            <Link to="/createactivity" style={{color:'White'}}>CreateActivity</Link>
+            {/* <Link to="/createactivity" style={{color:'White'}}>CreateActivity</Link> */}
             <Link to="/createnutrition" style={{color:'White', marginLeft:'2rem',marginTop:'1px'}}>CreateNutrition</Link>
             <Link to="/home" style={{color:'White', marginLeft:'2rem',marginTop:'1px'}}>Home</Link>
           </Box>

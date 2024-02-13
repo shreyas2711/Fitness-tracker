@@ -39,27 +39,27 @@ export const loadActivityReducer = (state = initialState,action)=>{
 
 };
 
-const activityDeleteReducer = (state={},action)=>{
+// const activityDeleteReducer = (state={},action)=>{
 
-    switch(action.type){
-        case ACTIVITY_LOAD_REQUEST:
-            return{
-                loading:true,
-            }
-        case ACTIVITY_DELETE_SUCCESS:
-            return{
-                loading:false,
-                success:true
-            }
-        case ACTIVITY_DELETE_FAIL:
-            return{
-                loading:false,
-                error:action.payload,
-            }
-        default:
-            return state;
-    }
-};
+//     switch(action.type){
+//         case ACTIVITY_LOAD_REQUEST:
+//             return{
+//                 loading:true,
+//             }
+//         case ACTIVITY_DELETE_SUCCESS:
+//             return{
+//                 loading:false,
+//                 success:true
+//             }
+//         case ACTIVITY_DELETE_FAIL:
+//             return{
+//                 loading:false,
+//                 error:action.payload,
+//             }
+//         default:
+//             return state;
+//     }
+// };
 
 
 export const activityCreateReducer = (state=initialState,action)=>{

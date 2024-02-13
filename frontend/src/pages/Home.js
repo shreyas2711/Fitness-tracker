@@ -8,8 +8,8 @@ import NavbarComp from '../components/NavbarComp';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import { CiSun } from 'react-icons/ci';
 import LoadingBox from '../components/LoadingBox';
-import CreateNutrition from './CreateNutrition';
 import CreateActivity from './CreateActivity';
+import AddActivity from '../components/AddActivity';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -46,9 +46,9 @@ export default function Home() {
     return <LoadingBox />;
   }
 
-  if (!nutritions || !nutritions.nutritions || nutritions.nutritions.length === 0) {
-    return <div>No nutrition data available.</div>;
-  }
+  // if (!nutritions || !nutritions.nutritions || nutritions.nutritions.length === 0) {
+  //   return <div>No nutrition data available.</div>;
+  // }
 
   console.log("Today's date string:", todayDateString);
 
@@ -112,35 +112,42 @@ export default function Home() {
       <NavbarComp />
 
       <div className="Home-comp">
-        {calories.length !== 0 ? (
+      
+        {/* {calories.length !== 0 ? ( */}
+        <h1 style={{marginLeft:'8rem',marginBottom:'-3rem '}}>Overview</h1>
           <div className="first-section">
           <div className="box1">
-        <img className='first-section-img' src="https://static.toiimg.com/photo/69098107.cms" alt="" />
+        <img className='first-section-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEAK0nMixEpZp993ao4bHX9c3kw_4vmhZjd_rEiqlnLQ&s" alt="" />
           <div className="img-heading">
           <h1 style={{fontSize:'19px',fontWeight:'700'}}>Protein: {sumprotein}g</h1></div>
         </div>
         <div className="box2">
-        <img className='first-section-img' src="https://media.istockphoto.com/id/1291101465/photo/over-shoulder-view-on-woman-using-tracker-software.jpg?s=612x612&w=0&k=20&c=_G2YPb8VTuw84_c5OmLMhpnJx4y49biHh_Ysjj4t7AU=" alt="" style={{width:'10rem',borderRadius:'10px',opacity:'0.4',height:'118px'}  } />
+        <img className='first-section-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnXLgHHd0_gfiwGqhnuAmBYkzXNRpafzipE_ohrRyU0A&s" alt="" style={{width:'10rem',borderRadius:'10px',opacity:'0.8',height:'118px'}  } />
           <div className="img-heading2">
-          <h1 style={{fontSize:'19px',fontWeight:'700'}}>Remaining calories: {remainingcalories}Kcal</h1></div>
+          <h1 style={{fontSize:'19px',fontWeight:'700',color:'white',fontFamily: 'system-ui'}}>Remaining calories: {remainingcalories}Kcal</h1></div>
         </div>
         <div className="box3">
-        <img className='first-section-img' src="https://static.toiimg.com/photo/69098107.cms" alt="" />
+        <img className='first-section-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3ybNvjWlarZ1qpYlP7nKGt620zDEHqksEAcODVQrzgg&s" alt="" style={{width:'10rem',borderRadius:'10px',opacity:'0.8',height:'118px'}  } />
           <div className="img-heading3">
-          <h1 style={{fontSize:'19px',fontWeight:'700'}}>Calories Consumed: {sumcalorie}Kcal</h1></div>
+          <h1 style={{fontSize:'19px',fontWeight:'700',color:'white'}}>Calories Consumed: {sumcalorie}Kcal</h1></div>
         </div>
         <div className="box4">
-        <img className='first-section-img' src="https://static.toiimg.com/photo/69098107.cms" alt="" />
+        <img className='first-section-img' src="https://wallpapercave.com/wp/wp3634878.png" alt="" style={{width:'10rem',borderRadius:'10px',opacity:'0.8',height:'118px'}  } />
           <div className="img-heading4">
-          <h1 style={{fontSize:'19px',fontWeight:'700'}}>Calories burned: {sumcalorieburnt}</h1></div>
+          <h1 style={{fontSize:'19px',fontWeight:'700',color:'white'}}>Calories burned: {sumcalorieburnt}</h1></div>
         </div>
           </div>
-        ) : (
-          <CreateNutrition />
-        )}
+        {/* ) : ( */}
+          {/* <CreateNutrition /> */}
+        {/* )} */}
 
         <div className="second-section">
-          <div className="second-heading">
+        <div className="second-column" style={{order:'2'}}>
+          <CreateActivity/>
+        </div>
+      
+        <div className="first-column">
+        <div className="second-heading">
             <h1>Recent activities</h1>
           </div>
           <div className="second-cards">
@@ -162,8 +169,11 @@ export default function Home() {
                   </div>
                 ))
             ) : (
-              <CreateActivity/>
+              <AddActivity/>
+           
+              
             )}
+            </div>
           </div>
         </div>
       </div>

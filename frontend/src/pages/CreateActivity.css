@@ -5,24 +5,31 @@
 
 
 .create-task-body-act{
-    margin-left: 0rem;
-    background: beige;
-    width: 49rem
+    margin-left: 2rem;
+    background: #e2e9e8;
+    width: 20rem;
+    margin-top: 0rem;
 }
 
 .form-act{
-    background-color: beige;
+    background-color: #f7f7f7;
     /* height: 20rem; */
-    padding: 8rem;
-
+    padding: 2rem 4rem;
+    margin-left: 0rem;
+    /* margin-left: ; */
+    padding-right: 0rem;
+    height: 13rem;
 }
+
+
 
 .submit-class{
     margin: 2rem 9rem;
     height: 2rem;
     width: 4rem;
     border-radius: 8px;
-    background: #9deaff
+    background: #9deaff;
+    margin-left: 4rem;
 }
 
 .submit-class:hover{
