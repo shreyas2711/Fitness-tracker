@@ -1,7 +1,7 @@
 import axios from "axios";  
 import { USER_LOGOUT, USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNUP_REQUEST } from "../constants/authConstants";
 
-
+// const BASE_URL = "/api/user";
 
 export const userSignInAction = (user)=>async(dispatch)=>{
 
