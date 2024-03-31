@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 export default function Login() {
 
     const {isAuthenticated} =   useSelector((state) => state.authtentication);
+    const {token} =   useSelector((state) => state.authtentication);
     
     
     console.log("Is authenticated:",isAuthenticated);
@@ -43,7 +44,7 @@ export default function Login() {
 
 
       useEffect(() => {
-        if (!isAuthenticated) {
+        if (!token) {
           navigate('/');
           console.log('Wrong credentials');
         } else {
