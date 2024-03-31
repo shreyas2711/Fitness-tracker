@@ -9,7 +9,7 @@ export const userSignInAction = (user)=>async(dispatch)=>{
     dispatch({type:USER_SIGNIN_REQUEST});
 
     try{
-        const {data} = await axios.post('https://fitness-tracker-4smw.onrender.com/api/user/signin',user);
+        const {data} = await axios.post('/api/user/signin',user);
         // console.log("Username is:",data.user.username);
 
         dispatch({
@@ -37,7 +37,7 @@ export const userSignOutAction = ()=> async(dispatch)=>{
     // dispatch({USER_LOGOUT_REQUEST});
 
     try{
-        const {data} = await axios.get('https://fitness-tracker-4smw.onrender.com/api/user/logout');
+        const {data} = await axios.get('/api/user/logout');
         localStorage.removeItem('token');
         localStorage.removeItem('isAuthenticated');
         dispatch({
@@ -59,7 +59,7 @@ export const userSignUpAction = (user)=>async(dispatch)=>{
 
     try{
 
-        const data = await axios.post('https://fitness-tracker-4smw.onrender.com/api/user/signup',user);
+        const data = await axios.post('/api/user/signup',user);
         dispatch({
             type:USER_SIGNIN_SUCCESS,
             payload:data,
