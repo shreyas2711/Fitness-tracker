@@ -51,7 +51,7 @@ export default function Login() {
           navigate('/home');
           // console.log('Auth was successful!', formData);
         }
-      }, [isAuthenticated, navigate]);
+      }, [token, navigate]);
      
 const handleFormSubmit = async(e)=>{  
 
