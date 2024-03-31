@@ -9,7 +9,7 @@ export const nutritionLoadAction =()=>async(dispatch)=>{
     
     try{
         
-        const {data} = await axios.get(`/api/nutrition/show`);
+        const {data} = await axios.get(`https://fitness-tracker-vag4.onrender.com/api/nutrition/show`);
         dispatch({ type: NURTITION_LOAD_SUCCESS, payload:data});
         // console.log("The data:",data);
         // dispatch(setNutrition(data.nutritions));
