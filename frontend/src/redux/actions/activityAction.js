@@ -8,8 +8,8 @@ export const activityLoadAction = ()=>async(dispatch)=>{
     dispatch({type:ACTIVITY_LOAD_REQUEST});
 
     try{
-        const {data} = await axios.get(`/api/activity/show`);
-        // console.log("Activity log:",data);
+        const {data} = await axios.get('https://fitness-tracker-4smw.onrender.com/api/activity/show');
+        console.log("Activity log:",data);
         dispatch({ type: ACTIVITY_LOAD_SUCCESS, payload:data});
        
     }
@@ -30,7 +30,7 @@ export const activityDeleteAction = (activityId)=>async(dispatch)=>{
         try{
            
 
-            const {data} = axios.delete(`/api/activity/delete/${activityId}`);
+            const {data} = axios.delete(`https://fitness-tracker-4smw.onrender.com/api/activity/delete/${activityId}`);
 
             dispatch({type:ACTIVITY_DELETE_SUCCESS,payload:data});
 
@@ -50,7 +50,7 @@ export const createActivity = (activityData)=>async(dispatch)=>{
     try{
         dispatch({type:ACTIVITY_CREATE_REQUEST})
 
-        const {data} = await axios.post(`/api/activity/create`,activityData);
+        const {data} = await axios.post('https://fitness-tracker-4smw.onrender.com/api/activity/create',activityData);
 
         dispatch({type:ACTIVITY_CREATE_SUCCESS,payload:data});
 
@@ -70,8 +70,8 @@ export const createNutrition = (nutritionData)=>async(dispatch)=>{
     try{
         dispatch({type:NUTRITION_CREATE_REQUEST})
 
-        const {data} = await axios.post(`/api/nutrition/create`,nutritionData);
-
+        const {data} = await axios.post('https://fitness-tracker-4smw.onrender.com/api/nutrition/create',nutritionData);
+        console.log("this is data:",data);
         dispatch({type:NUTRITION_CREATE_SUCCESS,payload:data});
 
 

@@ -20,6 +20,7 @@ export default function Home() {
   const { activities, loading: activityLoading } = useSelector((state) => state.activities);
 
   console.log(activities);
+  console.log("this is nutritions:",nutritions);
 
   const today = new Date();
   const todayDateString = today.toISOString().split('T')[0]; // Get today's date in 'YYYY-MM-DD' format
@@ -46,9 +47,9 @@ export default function Home() {
     return <LoadingBox />;
   }
 
-  // if (!nutritions || !nutritions.nutritions || nutritions.nutritions.length === 0) {
-  //   return <div>No nutrition data available.</div>;
-  // }
+  if (!nutritions || !nutritions.nutritions || nutritions.nutritions.length === 0) {
+    return <div>No nutrition data available.</div>;
+  }
 
   console.log("Today's date string:", todayDateString);
 
