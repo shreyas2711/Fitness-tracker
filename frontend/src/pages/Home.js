@@ -10,6 +10,7 @@ import { CiSun } from 'react-icons/ci';
 import LoadingBox from '../components/LoadingBox';
 import CreateActivity from './CreateActivity';
 import AddActivity from '../components/AddActivity';
+import { userSignOutAction } from '../redux/actions/authAction';
 
 export default function Home() {
   const dispatch = useDispatch();
